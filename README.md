@@ -2,19 +2,17 @@
 
 ## Info
 
-T-Shirt Cannon connects from an Arduino to an Android device using Bluetooth Low Energy (Bluetooth LE, or BLE). 
-The Arduino is an Arduino 101 (also called Genuine 101). The code utilizes the CurieBLE library on that Arduino. 
-The Android can be any 4.4 (API 19) phone with the ArduinoBluetooth app installed on it (source in here). 
+T-Shirt Cannon connects from an Arduino to an Android device using Bluetooth Low Energy (Bluetooth LE, or BLE).  The Arduino is an Arduino 101 (also called Genuine 101). The code utilizes the CurieBLE library on that Arduino. The Android can be any 4.4 (API 19) phone with the ArduinoBluetooth app installed on it (source in here). 
 
-<hr>
+***
 
 ## Configuration
 
 ### UUID List:
 
-All UUIDs in this table look like `0000####-0000-1000-8000-00805F9B34FB` in full, 128-bit form. The values in the table below replace the `####`
+All UUIDs in this table look like "`0000####-0000-1000-8000-00805F9B34FB`" in full, 128-bit form. The 16-bit values in the table below replace the "`####`"
 
-| UUID  | Description |
+| 16-bit UUID  | Description |
 | ------------- | ------------- |
 | `0000`  | Bluetooth device  |
 | `0001`  | Bluetooth service for driving  |
@@ -23,7 +21,7 @@ All UUIDs in this table look like `0000####-0000-1000-8000-00805F9B34FB` in full
 
 ### Android Configuration
 
-Set the following settings on a config named "tshirt_cannon"
+Save the following settings on a config named "tshirt_cannon":
 
 | Control  | Command | UUID |
 | ------------- | ------------- | ------------- |
@@ -40,13 +38,12 @@ Set the following settings on a config named "tshirt_cannon"
 
 ### Arduino Pins
 
-<u>Arduino Pins: </u>
-| Pin  | Action
+| Pin  | Action |
 | ------------- | ------------- |
 | 5  | Left wheel PWM |
 | 6  | Right wheel PWM |
 
-<hr>
+***
 
 ## Other useful links:
  - Arduino 101 Info Page: https://www.arduino.cc/en/Main/ArduinoBoard101
