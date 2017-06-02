@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:padding="10dp"
+        android:textAppearance="@style/Size14"
+        android:id="@+id/text_console"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:maxLines="20"
+        android:scrollbars="vertical"
+        android:gravity="bottom"
+        android:textColor="#666"
+        android:layout_weight="70" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:background="#666"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/cmd_input"
+            android:layout_weight="1"
+            android:hint="@string/input_hint"
+            android:maxLength="10"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="40dp"
+            android:textAppearance="@style/Size16" />
+
+        <Spinner
+            android:id="@+id/spinner_console"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="70" />
+
+        <Button
+            android:id="@+id/btn_send_input"
+            android:textAppearance="@style/Size16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onControlsClick"
+            android:text="@string/send" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_clear_console"
+            android:textAppearance="@style/Size16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:padding="13dp"
+            android:onClick="onControlsClick"
+            android:text="@string/clear_console" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50">
+
+
+        <Button
+            android:id="@+id/btn_center"
+            style="@style/ctrlbtn"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/center_icon" />
+
+        <Button
+            android:id="@+id/btn_left"
+            style="@style/ctrlbtn"
+            android:layout_toStartOf="@id/btn_center"
+            android:layout_centerVertical="true"
+            android:text="@string/left_arrow" />
+
+        <Button
+            android:id="@+id/btn_right"
+            style="@style/ctrlbtn"
+            android:layout_toEndOf="@id/btn_center"
+            android:layout_centerVertical="true"
+            android:text="@string/right_arrow" />
+
+        <Button
+            android:id="@+id/btn_up"
+            style="@style/ctrlbtn"
+            android:layout_above="@id/btn_center"
+            android:layout_centerHorizontal="true"
+            android:text="@string/up_arrow" />
+
+        <Button
+            android:id="@+id/btn_down"
+            style="@style/ctrlbtn"
+            android:layout_below="@id/btn_center"
+            android:layout_centerHorizontal="true"
+            android:text="@string/down_arrow" />
+
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            style="@style/ctrlbtn"
+            android:layout_marginStart="5dp"
+            android:text="@string/two" />
+
+        <Button
+            android:id="@+id/btn_1"
+            style="@style/ctrlbtn"
+            android:layout_above="@id/btn_2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:text="@string/one" />
+
+
+        <Button
+            android:id="@+id/btn_3"
+            style="@style/ctrlbtn"
+            android:layout_below="@id/btn_2"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:text="@string/three" />
+
+
+        <Button
+            android:id="@+id/btn_b"
+            style="@style/ctrlbtn"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:text="@string/b" />
+
+        <Button
+            android:id="@+id/btn_a"
+            style="@style/ctrlbtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_above="@id/btn_b"
+            android:text="@string/a" />
+
+        <Button
+            android:id="@+id/btn_c"
+            style="@style/ctrlbtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_below="@id/btn_b"
+            android:text="@string/c" />
+
+
+        <com.roboticsftc.andi.arduinobluetooth.fragments.VerticalSeekBar
+            android:id="@+id/leftSeek"
+            android:layout_marginStart="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@mipmap/bar"
+            android:progressDrawable="@android:color/transparent"
+            android:layout_height="match_parent" />
+
+        <com.roboticsftc.andi.arduinobluetooth.fragments.VerticalSeekBar
+            android:id="@+id/rightSeek"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="60dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/btn_b"
+            android:background="@mipmap/bar"
+            android:progressDrawable="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+</LinearLayout>
