@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/master_layout"
-    tools:context="com.roboticsftc.andi.arduinobluetooth.MainActivity">
+    tools:context="com.roboticsftc.andi.arduinobluetooth.com.shsrobotics.arduinobluetooth.MainActivity">
 
 
     <android.support.design.widget.TabLayout

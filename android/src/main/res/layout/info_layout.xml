@@ -4,12 +4,12 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_margin="10dp"
         android:id="@+id/text_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:maxLines="50"
-        android:text="woohoo"/>
+        android:maxLines="50"/>
 
 
 </LinearLayout>

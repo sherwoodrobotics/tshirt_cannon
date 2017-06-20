@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">ArduinoBluetooth</string>
 
-    <string name="info">Info</string>
-
     <string name="connection">Connection</string>
     <string name="connect">Connect</string>
     <string name="disconnect">Disconnect</string>
@@ -17,7 +15,7 @@
     <string name="char_uuid">Charactieristic UUID: </string>
     <string name="service_uuid">Service UUID: </string>
 
-    <string name="settings">Settings</string>
+    <string name="settings">Config</string>
     <string name="configure">Configure</string>
     <string name="select_config">Select currentConfig:</string>
     <string name="new_profile">New Profile…</string>
@@ -47,60 +45,45 @@
     <string name="value_rep">%v</string>
     <string name="left_seek">Left Seek: </string>
     <string name="right_seek">Right Seek: </string>
-    <string name="info_all"> Bee Movie script!\n\n
-        According to all known laws
-of aviation,
-\n\n
 
-there is no way a bee
-should be able to fly.
-\n\n
+    <string name="please_enable_lc">Please enable location services</string>
+    <string name="already_scanning">Already scanning!</string>
+    <string name="already_connected">Already connected!</string>
+    <string name="scanning_bt">Scanning Bluetooth devices…</string>
+    <string name="finished_scanning">Finished scanning</string>
+    <string name="connecting">Connecting…</string>
+    <string name="connected">Connected and ready to go</string>
+    <string name="not_connected">Not connected!</string>
+    <string name="no_bluetooth">Error: Bluetooth and/or location services is unsupported or is disabled.</string>
 
-Its wings are too small to get
-its fat little body off the ground.
-\n\n
+    <string name="info">Info</string>
+    <string name="info_all">
 
-The bee, of course, flies anyway
-\n\n
+ArduinoBluetooth v1.0 | Written by Andy Nguyen (2017)\n
+Scroll down to bottom for legal stuff\n\n
 
-because bees don\'t care
-what humans think is impossible.
-\n\n
+---------------------\n\n
 
-Yellow, black. Yellow, black.
-Yellow, black. Yellow, black.
-\n\n
+This app can connect and send messages to a Bluetooth Low Energy device, specifically the Arduino 101. \n\n
 
-Ooh, black and yellow!
-Let\'s shake it up a little.
-\n\n
+---------------------\n\n
 
-Barry! Breakfast is ready!
+Guide:\n
+1. Go to the CONNECTION tab. Turn on Bluetooth and Location Services (both needed).\n
+2. Hit "SCAN" to scan for nearby devices. Scanning takes 10 seconds but can be cut short with:\n
+3. Find the device you want to select to and hit "CONNECT". Connection time varies.\n
+4. Go to the "CONFIG" tab. Configure buttons to your liking. The command is the exact message that will be sent to the BT device, and it will automatically be converted to int, float, or String. The dropdown is the characteristic and service to connect to, which are set on the BT device. "C ####" is the 16-bit UUID of the characteristic, and "S ####" is the 16-bit UUID of the service.\n
+5. Go to the "CONTROLS" tab and have fun.\n\n
 
-\n\n
-Ooming!
+---------------------\n\n
 
-\n\n
-Hang on a second.
+Copyright 2017 SHS Robotics.\n\n
 
-\n\n
-Hello?
-\n\n
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\n
 
-- Barry?
-- Adam?
-\n\n
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\n
 
-- Oan you believe this is happening?
-- I can\'t. I\'ll pick you up.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    </string>
 
-\n\n
-Looking sharp.
-
-\n\n
-Use the stairs. Your father
-paid good money for those.
-\n\n
-
-Sorry. I\'m excited.</string>
 </resources>

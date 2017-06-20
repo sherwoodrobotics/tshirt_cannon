@@ -168,7 +168,7 @@
             android:text="@string/c" />
 
 
-        <com.roboticsftc.andi.arduinobluetooth.fragments.VerticalSeekBar
+        <com.shsrobotics.arduinobluetooth.fragments.VerticalSeekBar
             android:id="@+id/leftSeek"
             android:layout_marginStart="15dp"
             android:layout_centerVertical="true"
@@ -179,7 +179,7 @@
             android:progressDrawable="@android:color/transparent"
             android:layout_height="match_parent" />
 
-        <com.roboticsftc.andi.arduinobluetooth.fragments.VerticalSeekBar
+        <com.shsrobotics.arduinobluetooth.fragments.VerticalSeekBar
             android:id="@+id/rightSeek"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="60dp"

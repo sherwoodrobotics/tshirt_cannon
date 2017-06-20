@@ -90,7 +90,7 @@
         android:text="@string/c" />
 
 
-    <com.roboticsftc.andi.arduinobluetooth.fragments.VerticalSeekBar
+    <com.shsrobotics.arduinobluetooth.fragments.VerticalSeekBar
         android:id="@+id/leftSeek"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -101,7 +101,7 @@
         android:background="@mipmap/bar"
         android:progressDrawable="@android:color/transparent" />
 
-    <com.roboticsftc.andi.arduinobluetooth.fragments.VerticalSeekBar
+    <com.shsrobotics.arduinobluetooth.fragments.VerticalSeekBar
         android:id="@+id/rightSeek"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
