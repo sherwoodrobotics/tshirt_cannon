@@ -15,8 +15,15 @@
 /* Editable */
 
 //Pins for the wheels motors
-const int leftMotors = 6;
-const int rightMotors = 5;
+const int leftMotors = 14;
+const int rightMotors = 15;
+
+const int cannon1 = 2;
+const int cannon2 = 3;
+const int cannon3 = 4;
+
+const int millisBeforeLaunch = 5000;
+const int triggerTime = 250;
 
 /**
  * Convention:
@@ -34,6 +41,10 @@ const char* bluetoothUUID = "0000";
 const char* driveServiceUUID = "0001";
 const char* leftWheelsUUID = "0011";
 const char* rightWheelsUUID = "0021";
+const char* launchServiceUUID = "0002";
+const char* cannon1UUID = "0012";
+const char* cannon2UUID = "0022";
+const char* cannon3UUID = "0032";
 
 //Constants defining forward and backward on Servo (Arduino server) vs Seekbar (Android client)
 const int fullForward = 180;
@@ -54,9 +65,21 @@ Servo rightServo;
 
 //BT connection
 BLEPeripheral blePeripheral; 
+
+//Drive
 BLEService driveService(driveServiceUUID); 
 BLEFloatCharacteristic leftWheelsChar(leftWheelsUUID, BLERead | BLEWrite);
 BLEFloatCharacteristic rightWheelsChar(rightWheelsUUID, BLERead | BLEWrite);
+
+//Launch
+BLEService launchService(launchServiceUUID);
+BLEFloatCharacteristic cannon1Char(cannon1UUID, BLERead | BLEWrite);
+BLEFloatCharacteristic cannon2Char(cannon2UUID, BLERead | BLEWrite);
+BLEFloatCharacteristic cannon3Char(cannon3UUID, BLERead | BLEWrite);
+
+int cannon1Time = 0;
+int cannon2Time = 0;
+int cannon3Time = 0;
 
 /* End Do not touch these*/
 
@@ -65,6 +88,9 @@ void setup() {
   Serial.begin(9600);
   leftServo.attach(leftMotors);
   rightServo.attach(rightMotors);
+  pinMode(cannon1, OUTPUT);
+  pinMode(cannon2, OUTPUT);
+  pinMode(cannon3, OUTPUT);
 
   //Setup Bluetooth Peripheral (server)
   blePeripheral.setLocalName("BluetoothLED");
@@ -72,12 +98,19 @@ void setup() {
   blePeripheral.addAttribute(driveService);
   blePeripheral.addAttribute(leftWheelsChar);
   blePeripheral.addAttribute(rightWheelsChar);
+  blePeripheral.addAttribute(launchService);
+  blePeripheral.addAttribute(cannon1Char);
+  blePeripheral.addAttribute(cannon2Char);
+  blePeripheral.addAttribute(cannon3Char);
 
   //Setup callbacks to call when events happen
   blePeripheral.setEventHandler(BLEConnected, peripheralConnected);
   blePeripheral.setEventHandler(BLEDisconnected, peripheralDisconnected);
   leftWheelsChar.setEventHandler(BLEWritten, leftWheelsWritten);
   rightWheelsChar.setEventHandler(BLEWritten, rightWheelsWritten);
+  cannon1Char.setEventHandler(BLEWritten, cannon1Written);
+  cannon2Char.setEventHandler(BLEWritten, cannon2Written);
+  cannon3Char.setEventHandler(BLEWritten, cannon3Written);
 
   //Ready
   leftWheelsChar.setValue(0);
@@ -93,6 +126,37 @@ void loop() {
     delay(pollDelay);
   }
 }
+
+void cannon1Written(BLECentral& central, BLECharacteristic& characteristic) {
+  if (cannon1Time >= millisBeforeLaunch + millis()) {
+      digitalWrite(cannon1, HIGH);
+      delay(triggerTime);
+      digitalWrite(cannon1, LOW);
+      cannon1Time = millis();
+  }
+}
+
+void cannon2Written(BLECentral& central, BLECharacteristic& characteristic) {
+  if (cannon2Time >= millisBeforeLaunch + millis()) {
+      digitalWrite(cannon2, HIGH);
+      delay(triggerTime);
+      digitalWrite(cannon2, LOW);
+      cannon2Time = millis();
+  }
+  
+}
+
+void cannon3Written(BLECentral& central, BLECharacteristic& characteristic) {
+
+  if (cannon3Time >= millisBeforeLaunch + millis()) {
+      digitalWrite(cannon3, HIGH);
+      delay(triggerTime);
+      digitalWrite(cannon3, LOW);
+      cannon3Time = millis();
+  }
+  
+}
+
 
 void leftWheelsWritten(BLECentral& central, BLECharacteristic& characteristic) {
   Serial.print("Got: ");

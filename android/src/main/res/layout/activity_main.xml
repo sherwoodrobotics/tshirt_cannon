@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/master_layout"
+    tools:context="com.roboticsftc.andi.arduinobluetooth.com.shsrobotics.arduinobluetooth.MainActivity">
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_navigation"
+        app:tabTextAppearance="@style/CustomTabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <android.support.design.widget.TabItem
+            android:text="@string/connection"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <android.support.design.widget.TabItem
+            android:text="@string/controls"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <android.support.design.widget.TabItem
+            android:text="@string/settings"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <android.support.design.widget.TabItem
+            android:text="@string/info"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/tab_viewport"
+        android:layout_below="@id/tab_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>
