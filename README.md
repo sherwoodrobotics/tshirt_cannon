@@ -49,6 +49,15 @@ Save the following settings on a config named "tshirt_cannon":
 
 ***
 
+## Keystore
+
+Current provided APK signed by Andy Nguyen.
+Valid for next 2 years as of 6/20/17.
+Keystore password: `robotics`
+key0 password: `arduinobluetooth`
+
+***
+
 ## Other useful links:
  - Arduino 101 Info Page: https://www.arduino.cc/en/Main/ArduinoBoard101
  - Arduino CurieBLE library: https://www.arduino.cc/en/Reference/CurieBLE
